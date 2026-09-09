@@ -9,29 +9,29 @@ const FESTIVAL_ITEMS: TestimonialItem[] = [
         id: "tecnoesis",
         title: "Tecnoesis",
         description: "NIT Silchar's annual national techno-management festival. Capturing the synergy of path-breaking innovation, competitive hackathons, robotics challenges, and futuristic tech exhibitions.",
-        image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80",
-        driveLink: "https://drive.google.com/drive/folders/1TeCN0eS1SFesT_Exhibits-example",
+        image: "/images/Gallery_Exhibits/technoesis.webp",
+        driveLink: "https://drive.google.com/drive/folders/1dcfXJVJp2b__bKw-hGWu_XOLSJP180lY?usp=drive_link",
     },
     {
         id: "incandescence",
         title: "Incandescence",
         description: "The prominent cultural extravaganza of India's North-East. Documenting electric concert headliners, competitive high-octane rock bands, theatrical drama, and vivid cultural showcases.",
-        image: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80",
-        driveLink: "https://drive.google.com/drive/folders/1INcaND_Exhibits-example",
+        image: "/images/Gallery_Exhibits/incand.webp",
+        driveLink: "https://drive.google.com/drive/folders/1qGf_7obbO5k_ac39nY_7G8ViDSvtvwqE?usp=drive_link",
     },
     {
         id: "posua",
         title: "Posua",
         description: "The celebration of Spring and Assamese heritage. Freezing the golden rhythms of Bihu, traditional folk melodies, and colorful cultural performances echoing the heritage of regional roots.",
-        image: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80",
-        driveLink: "https://drive.google.com/drive/folders/1PoSUa_Exhibits-example",
+        image: "/images/Gallery_Exhibits/posua.webp",
+        driveLink: "https://drive.google.com/drive/folders/1iiALSbYw0MsHGhoudOgI3YgB_rM_4eZ0?usp=drive_link",
     },
     {
         id: "oikotan",
         title: "Oikotan",
         description: "The regional annual musical and acoustic harmony fest. Beautiful memories of unplugged acoustic performances, vocal duels, and folk-infused jam sessions echoing traditional sounds.",
-        image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80",
-        driveLink: "https://drive.google.com/drive/folders/1OikOtan_Exhibits-example",
+        image: "/images/Gallery_Exhibits/okiotan.webp",
+        driveLink: "https://drive.google.com/drive/folders/1IvbZ_BagEaTQ5xhRdeDQT8h3MFxCojGc?usp=drive_link",
     },
 ];
 
@@ -67,8 +67,6 @@ export function FestivalsSection() {
                     <TestimonialsCard 
                         items={FESTIVAL_ITEMS} 
                         width={950} 
-                        autoPlay={true}
-                        autoPlayInterval={5000} 
                     />
                 </div>
             </div>

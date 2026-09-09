@@ -11,10 +11,10 @@ export const navLinks = [
     title: "Gallery",
     href: "/gallery",
   },
-  {
-    title: "Events",
-    href: "/events",
-  },
+  // {
+  //   title: "Events",
+  //   href: "/events",
+  // },
   {
     title: "Team",
     href: "/team",

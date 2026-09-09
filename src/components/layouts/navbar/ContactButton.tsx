@@ -15,15 +15,21 @@ export default function ContactButton() {
       className="
         flex
         group
-        h-9
-        gap-2
+        h-8
+        sm:h-9
+        gap-1.5
+        sm:gap-2
         items-center
         rounded-full
         bg-white
-        px-4
-        text-xs
+        px-2.5
+        sm:px-4
+        text-[11px]
+        sm:text-xs
         font-medium
         text-black
+        whitespace-nowrap
+        shrink-0
         transition-all
         duration-300
         hover:-translate-y-0.5
@@ -37,7 +43,7 @@ export default function ContactButton() {
     >
       Contact Us
       <ArrowUpRight
-        size={14}
+        size={13}
         className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
       />
     </button>

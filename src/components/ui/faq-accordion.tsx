@@ -16,23 +16,50 @@ export interface FaqAccordionProps extends React.HTMLAttributes<HTMLDivElement> 
 const DEFAULT_ITEMS: FaqItem[] = [
   {
     question: "What is Obiettivo Photography Club?",
-    answer: "Obiettivo is the Official Photography Club of NIT Silchar. We capture stories, host workshops, cover major campus events, and cultivate visual arts excellence.",
+    answer:
+      "Obiettivo is the Official Photography Club of NIT Silchar. We capture stories, document campus life, cover major events, and provide a space for students to explore photography and visual storytelling.",
   },
+
   {
     question: "How can I join Obiettivo?",
-    answer: "Recruitments take place annually for NIT Silchar students. Keep an eye on our social channels and announcements for recruitment drive dates.",
+    answer:
+      "Recruitments take place annually for NIT Silchar students. Keep an eye on our official social channels and campus announcements for recruitment drive dates and application details.",
   },
+
   {
-    question: "Can I request event coverage or collaboration?",
-    answer: "Yes! Use the Support Desk / Contact Us form in our website to reach out for event coverage or creative collaborations.",
+    question: "Can beginners join the club?",
+    answer:
+      "Absolutely! You do not need to be an experienced photographer to join. Passion for photography, creativity, storytelling, and a willingness to learn are what matter most.",
   },
+
   {
     question: "Do I need a professional camera to join?",
-    answer: "No professional gear is strictly required to apply! Passion for photography, storytelling, design, editing, and creativity is what matters most.",
+    answer:
+      "No professional gear is strictly required to apply. A smartphone or basic camera can be enough to get started. Your creativity, perspective, and willingness to learn matter more than your equipment.",
   },
+
+  {
+    question: "What activities does Obiettivo organize?",
+    answer:
+      "Obiettivo is involved in photography projects, creative shoots, campus documentation, event coverage, workshops, and other activities that encourage students to explore visual storytelling.",
+  },
+
+  {
+    question: "Can I request event coverage or collaboration?",
+    answer:
+      "Yes! Use the Contact Us form on our website to reach out for event coverage, photography requirements, or creative collaborations. Please provide the relevant event details and your contact information.",
+  },
+
   {
     question: "Where can I view the club gallery and projects?",
-    answer: "Explore our Gallery and Projects sections right here on the website to view our latest visual collections.",
+    answer:
+      "Explore our Gallery and Projects sections right here on the website to discover selected photographs, creative works, and visual collections from Obiettivo.",
+  },
+
+  {
+    question: "How can I contact Obiettivo?",
+    answer:
+      "You can reach out to us through the Contact Us section of this website for general enquiries, event coverage requests, collaborations, or other photography-related queries.",
   },
 ];
 

@@ -8,7 +8,7 @@ export function ContactModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   useEffect(() => {
     const handleOpen = () => {
@@ -19,16 +19,40 @@ export function ContactModal() {
     return () => window.removeEventListener("open-contact-modal", handleOpen);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !comment) return;
-    setStatus("sending");
-    setTimeout(() => {
-      setStatus("sent");
-      setEmail("");
-      setComment("");
-    }, 1200);
-  };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!email || !comment) return;
+
+  setStatus("sending");
+
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+        message: comment,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || "Failed to send message");
+    }
+
+    setStatus("sent");
+    setEmail("");
+    setComment("");
+
+  } catch (error) {
+    console.error("Contact form error:", error);
+    setStatus("error");
+  }
+};
 
   const handleClose = () => {
     setIsOpen(false);
@@ -90,9 +114,9 @@ export function ContactModal() {
                     <CheckCircle2 className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-bold text-white">Message Secret Shared!</h4>
+                    <h4 className="text-lg font-bold text-white">Message Sent Successfully!</h4>
                     <p className="text-xs text-zinc-400 mt-2 max-w-xs leading-relaxed font-light font-[family-name:var(--font-sora)]">
-                      Thanks for reaching out! We have successfully queued your comment. Check your inbox, <span className="text-blue-400 font-semibold">we will mail you back</span> soon.
+                      Thanks for reaching out! Your message has been sent successfully. The Obiettivo team will get back to you soon.
                     </p>
                   </div>
                   <button
@@ -144,6 +168,12 @@ export function ContactModal() {
                       />
                     </div>
                   </div>
+
+                  {status === "error" && (
+                    <p className="text-center text-xs text-red-400">
+                        Failed to send your message. Please try again.
+                    </p>
+                  )}
 
                   {/* Form Submission Button */}
                   <button

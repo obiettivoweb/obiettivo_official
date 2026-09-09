@@ -4,18 +4,39 @@ import { motion } from "framer-motion";
 import CircularGallery from "./CircularGallery";
 
 const GALLERY_ITEMS = [
-  { image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=800&q=80", text: "Electric Stage" },
-  { image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80", text: "Glass Focus" },
-  { image: "https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80", text: "Grand Facade" },
-  { image: "https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=800&q=80", text: "Studio Light" },
-  { image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80", text: "Sunlit Coast" },
-  { image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=800&q=80", text: "B&W Capture" },
-  { image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80", text: "City Pulse" },
-  { image: "https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=800&q=80", text: "Santorini Skies" },
-  { image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80", text: "Deep Forest" },
-  { image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80", text: "Neon Night" },
-  { image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80", text: "Wild Vista" },
-  { image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=800&q=80", text: "Urban Grid" },
+  { image: "/images/Circular_Gallery/Threads_of_Heritage.webp", text: "Threads of Heritage" },
+
+  { image: "/images/Circular_Gallery/Cultural_Echoes.webp", text: "Cultural Echoes" },
+
+  { image: "/images/Circular_Gallery/Rhythm_in_Motion.webp", text: "Rhythm in Motion" },
+
+  { image: "/images/Circular_Gallery/A_Touch_of_Whimsy.webp", text: "A Touch of Whimsy" },
+
+  { image: "/images/Circular_Gallery/Grace_in_Tradition.webp", text: "Grace in Tradition" },
+
+  { image: "/images/Circular_Gallery/Architectural_Grandeur.webp", text: "Architectural Grandeur" },
+
+  { image: "/images/Circular_Gallery/Colours_of_Devotion.webp", text: "Colours of Devotion" },
+
+  { image: "/images/Circular_Gallery/Hands_That_Shape.webp", text: "Hands That Shape" },
+
+  { image: "/images/Circular_Gallery/Reflections_Within.webp", text: "Reflections Within" },
+
+  { image: "/images/Circular_Gallery/Veil_of_Light.webp", text: "Veil of Light" },
+
+  { image: "/images/Circular_Gallery/Colours_of_Celebration.webp", text: "Colours of Celebration" },
+
+  { image: "/images/Circular_Gallery/Everyday_Stories.webp", text: "Everyday Stories" },
+
+  { image: "/images/Circular_Gallery/Into_the_Mist.webp", text: "Into the Mist" },
+
+  { image: "/images/Circular_Gallery/Whispers_of_the_Wild.webp", text: "Whispers of the Wild" },
+
+  { image: "/images/Circular_Gallery/Beyond_the_Horizon.webp", text: "Beyond the Horizon" },
+
+  { image: "/images/Circular_Gallery/Emerald_Horizons.webp", text: "Emerald Horizons" },
+
+  { image: "/images/Circular_Gallery/Still_Waters.webp", text: "Still Waters" },
 ];
 
 export default function FeaturedMoments() {

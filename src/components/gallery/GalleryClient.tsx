@@ -9,100 +9,123 @@ import FestivalsSection from "@/components/home/FestivalsSection";
 
 // Gallery Items Data
 const GALLERY_ITEMS = [
-  // Monochrome
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80",
-    title: "Classic Capture",
+    image: "/images/Gallery_Exhibits/monochrome.webp",
     category: "Monochrome",
-    photographer: "Rahul Sharma",
+    title: "Stories in Shades",
+    description:
+      "A world captured beyond colour, where light and shadow take centre stage. Explore moments shaped by contrast, emotion, and timeless simplicity.",
+    exploreUrl: "https://drive.google.com/drive/folders/1UlAFD6SliWNW9Uyq4HgByq2QZkllG5sl",
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
-    title: "The Melancholic Jazz",
-    category: "Monochrome",
-    photographer: "Ishita Das",
+    image: "/images/Gallery_Exhibits/BirdEye.webp",
+    category: "Bird Eye",
+    title: "A View from Above",
+    description:
+      "See the world from a different perspective. Discover landscapes, patterns, and moments captured from above, revealing details often missed from the ground.",
+    exploreUrl: "https://drive.google.com/drive/folders/1ltWFI1ijXzRUQHLJkuG2CGWy5_MYAkkv?usp=drive_link",
   },
-  // Street
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80",
-    title: "Midnight Alley",
-    category: "Street",
-    photographer: "Ankit Gogoi",
+    image: "/images/Gallery_Exhibits/campus.webp",
+    category: "Campus",
+    title: "Life Around Campus",
+    description:
+      "From quiet corners to lively pathways, campus is filled with stories waiting to be captured. A collection of everyday moments that define student life.",
+    exploreUrl: "https://drive.google.com/drive/folders/1FcJ5dh7fc9KhCbIxCHBW-2NoD1wo3IKD?usp=drive_link",
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?auto=format&fit=crop&w=800&q=80",
-    title: "Cyberpunk Tokyo",
-    category: "Street",
-    photographer: "Sourav Nath",
+    image: "/images/Gallery_Exhibits/clubEvents.webp",
+    category: "Club Events",
+    title: "Moments That Bring Us Together",
+    description:
+      "The energy, excitement, and memories behind our events. Relive the moments where creativity, collaboration, and community come alive.",
+    exploreUrl: "https://drive.google.com/drive/folders/1F9wwvhPjMX61l8RF2inMnYGeFSzKlU4H?usp=drive_link",
   },
-  // Portraits
   {
     id: 5,
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
-    title: "Expressions",
-    category: "Portraits",
-    photographer: "Sneha Roy",
+    image: "/images/Gallery_Exhibits/portrait.webp",
+    category: "Portrait",
+    title: "Faces & Stories",
+    description:
+      "Every face carries a story, a mood, and a moment. Explore portraits that capture personality, expression, and the individuality behind every frame.",
+    exploreUrl: "https://drive.google.com/drive/folders/1gXz45bRMAeZjxos5Q8HfVYQ0pKs0xH-I?usp=drive_link",
   },
   {
     id: 6,
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80",
-    title: "Rust & Shadows",
-    category: "Portraits",
-    photographer: "Vikramjit Paul",
+    image: "/images/Gallery_Exhibits/anonymous.webp",
+    category: "Anonymous",
+    title: "Unknown, Yet Captured",
+    description:
+      "A collection of moments where identity takes a back seat to the frame. Faces, figures, and fleeting details remain unnamed, leaving the photograph open to interpretation.",
+    exploreUrl: "https://drive.google.com/drive/folders/11094GWn-BVz8vRWbSLkL0O1F5ysqi5ay?usp=drive_link",
   },
-  // Nature & Landscapes
   {
     id: 7,
-    image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80",
-    title: "Alpine Peaks",
-    category: "Nature",
-    photographer: "Priyam Borah",
+    image: "/images/Gallery_Exhibits/wildlife.webp",
+    category: "Wildlife",
+    title: "Wild, Untamed & Alive",
+    description:
+      "A glimpse into the world beyond our own. Discover the beauty, movement, and quiet moments of wildlife through the lens.",
+    exploreUrl: "https://drive.google.com/drive/folders/1aVq2vMAvcf-6xqr0k4yeXjJfOLeWjHZR?usp=drive_link",
   },
   {
     id: 8,
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80",
-    title: "Enshrouded Woods",
+    image: "/images/Gallery_Exhibits/Nature.webp",
     category: "Nature",
-    photographer: "Debojyoti Dey",
+    title: "Where Nature Speaks",
+    description:
+      "From vast landscapes to quiet details, nature offers endless perspectives. A collection celebrating the colours, textures, and calm of the natural world.",
+    exploreUrl: "https://drive.google.com/drive/folders/1GL03QI4vEAdA36fmmTjQl3Ic9FvPHdI7?usp=drive_link",
   },
-  // Creative
   {
     id: 9,
-    image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80",
-    title: "Chlorophyll Light",
-    category: "Creative",
-    photographer: "Abhishek Sen",
+    image: "/images/Gallery_Exhibits/creative.webp",
+    category: "Creative Shoot",
+    title: "Beyond the Ordinary",
+    description:
+      "Where imagination meets the camera. Experimental ideas, unique compositions, and creative perspectives come together to create something unexpected.",
+    exploreUrl: "https://drive.google.com/drive/folders/1X0nSvyZWe4UYhqdyeeyFnBb3sS_Deb_8?usp=drive_link",
   },
   {
     id: 10,
-    image: "https://images.unsplash.com/photo-1513829096999-4978602297af?auto=format&fit=crop&w=800&q=80",
-    title: "Luminescent Trails",
-    category: "Creative",
-    photographer: "Tanmoy Baruah",
+    image: "/images/Gallery_Exhibits/admin&Gub.webp",
+    category: "Admin & Gymkhana",
+    title: "The People Behind the Scenes",
+    description:
+      "Celebrating the people and moments that keep campus life moving. A collection of activities, interactions, and memories from the administrative and gymkhana spaces.",
+    exploreUrl: "https://drive.google.com/drive/folders/1P2wpCoCx3p7iZSmgnUdxXPY_vWgZBG2c?usp=drive_link",
   },
 ];
 
 // Carousel items (WebGL)
 const CAROUSEL_ITEMS = [
-  { image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80", text: "Heritage" },
-  { image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80", text: "Urbanity" },
-  { image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80", text: "Identity" },
-  { image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80", text: "Serenity" },
-  { image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80", text: "Abstract" },
-  { image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80", text: "Wilderness" },
-  { image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", text: "Vistas" },
-  { image: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80", text: "Luminescence" },
-  { image: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=800&q=80", text: "Deciduous" },
-  { image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80", text: "Meadows" },
-  { image: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80", text: "Solaris" },
-  { image: "https://images.unsplash.com/photo-1433832597046-4f10e10ac764?auto=format&fit=crop&w=800&q=80", text: "Aero" },
-  { image: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=800&q=80", text: "Sombre" },
-  { image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=80", text: "Athletics" },
-  { image: "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=800&q=80", text: "Summit" },
+  { image: "/images/Gallery_Carousel/Bloom.webp", text: "Bloom" },
+  { image: "/images/Gallery_Carousel/Solitude.webp", text: "Solitude" },
+  { image: "/images/Gallery_Carousel/Heritage.webp", text: "Heritage" },
+  { image: "/images/Gallery_Carousel/Stillness.webp", text: "Stillness" },
+  { image: "/images/Gallery_Carousel/Rhythm.webp", text: "Rhythm" },
+  { image: "/images/Gallery_Carousel/Tradition.webp", text: "Tradition" },
+  { image: "/images/Gallery_Carousel/Embers.webp", text: "Embers" },
+  { image: "/images/Gallery_Carousel/Grace.webp", text: "Grace" },
+  { image: "/images/Gallery_Carousel/Focus.webp", text: "Focus" },
+  { image: "/images/Gallery_Carousel/Devotion.webp", text: "Devotion" },
+  { image: "/images/Gallery_Carousel/Glimpse.webp", text: "Glimpse" },
+  { image: "/images/Gallery_Carousel/Geometry.webp", text: "Geometry" },
+  { image: "/images/Gallery_Carousel/Freedom.webp", text: "Freedom" },
+  { image: "/images/Gallery_Carousel/Luminescence.webp", text: "Luminescence" },
+  { image: "/images/Gallery_Carousel/Craft.webp", text: "Craft" },
+  { image: "/images/Gallery_Carousel/Perspective.webp", text: "Perspective" },
+  { image: "/images/Gallery_Carousel/Noir.webp", text: "Noir" },
+  { image: "/images/Gallery_Carousel/Wanderlust.webp", text: "Wanderlust" },
+  { image: "/images/Gallery_Carousel/Culture.webp", text: "Culture" },
+  { image: "/images/Gallery_Carousel/Essence.webp", text: "Essence" },
+  { image: "/images/Gallery_Carousel/Petals.webp", text: "Petals" },
+  { image: "/images/Gallery_Carousel/Serenity.webp", text: "Serenity" },
+  { image: "/images/Gallery_Carousel/Euphoria.webp", text: "Euphoria" },
 ];
 
 const CAROUSEL_IMAGES = CAROUSEL_ITEMS.map((item) => ({
@@ -122,18 +145,17 @@ export default function GalleryClient() {
       ? GALLERY_ITEMS
       : GALLERY_ITEMS.filter((item) => item.category === selectedCategory);
 
-  const masonryItems = filteredItems.map((item) => {
-    // Generate distinct heights for staggered masonry layout
-    const heights = [320, 390, 270, 360, 310, 400, 280, 370, 330, 420];
-    const height = heights[(item.id - 1) % heights.length];
+  const masonryItems = filteredItems.map((item, index) => {
+    // Generate balanced distinct heights for staggered masonry layout
+    const heights = [320, 280, 360, 300, 290, 370, 340, 290, 310, 290];
+    const height = heights[index % heights.length];
     return {
       id: item.id.toString(),
       img: item.image,
       url: "#",
       height: height,
-      title: item.title,
       category: item.category,
-      photographer: item.photographer,
+      title: item.title,
     };
   });
 
@@ -287,76 +309,134 @@ export default function GalleryClient() {
       <FestivalsSection />
 
       {/* 5. Fullscreen Photo Lightbox Modal */}
-      <AnimatePresence>
-        {selectedPhoto && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 md:p-10 backdrop-blur-md"
-            onClick={() => setSelectedPhoto(null)}
-          >
-            <div 
-              className="relative max-w-5xl w-full max-h-[85vh] bg-[#0b0b0c] border border-white/10 rounded-2xl overflow-hidden flex flex-col md:grid md:grid-cols-[1.4fr_0.6fr]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Close Button */}
-              <button 
-                onClick={() => setSelectedPhoto(null)}
-                className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/60 border border-white/10 text-white/80 hover:text-white cursor-pointer hover:bg-black"
-              >
-                ✕
-              </button>
+<AnimatePresence>
+  {selectedPhoto && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-4 md:p-10 backdrop-blur-md"
+      onClick={() => setSelectedPhoto(null)}
+    >
+      <div
+        className="relative max-w-5xl w-full h-[85vh] bg-[#0b0b0c] border border-white/10 rounded-2xl overflow-hidden flex flex-col md:grid md:grid-cols-[1.4fr_0.6fr]"
+        onClick={(e) => e.stopPropagation()}
+      >
 
-              {/* Photo Area */}
-              <div className="relative w-full h-[40vh] md:h-full bg-black flex items-center justify-center">
-                <img
-                  src={selectedPhoto.image}
-                  alt={selectedPhoto.title}
-                  className="w-full h-full object-contain"
-                />
-              </div>
+        {/* Close Button */}
+        <button
+          onClick={() => setSelectedPhoto(null)}
+          className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/60 border border-white/10 text-white/80 hover:text-white cursor-pointer hover:bg-black"
+        >
+          ✕
+        </button>
 
-              {/* Sidebar Info Area */}
-              <div className="p-6 md:p-8 flex flex-col justify-between h-auto md:h-full bg-[#0b0b0c] border-t md:border-t-0 md:border-l border-white/10">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[9px] font-bold uppercase tracking-widest text-blue-400 font-[family-name:var(--font-syncopate)] px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/20">
-                      {selectedPhoto.category}
-                    </span>
-                  </div>
-                  
-                  <h2 className="mt-4 text-xl md:text-2xl font-bold text-white font-[family-name:var(--font-sora)]">
-                    {selectedPhoto.title}
-                  </h2>
+        {/* Photo Area */}
+        <div className="relative w-full h-[40vh] md:h-full min-h-0 bg-black flex items-center justify-center">
+          <img
+            src={selectedPhoto.image}
+            alt={selectedPhoto.title}
+            className="w-full h-full object-contain"
+          />
+        </div>
 
-                  <div className="mt-8 border-t border-white/5 pt-4 space-y-4">
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="text-zinc-500 font-light">Captured by</span>
-                      <span className="text-zinc-300 font-medium">{selectedPhoto.photographer}</span>
-                    </div>
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="text-zinc-500 font-light">Equipment</span>
-                      <span className="text-zinc-300">Sony Alpha 7M3 / 50mm f/1.8</span>
-                    </div>
-                    <div className="flex justify-between items-center text-xs">
-                      <span className="text-zinc-500 font-light">Exposure</span>
-                      <span className="text-zinc-300">1/160s, f/2.2, ISO 800</span>
-                    </div>
-                  </div>
-                </div>
+        {/* Sidebar */}
+        <div
+          className="
+            relative
+            h-full
+            min-h-0
+            overflow-hidden
+            bg-[#0b0b0c]
+            border-t md:border-t-0 md:border-l border-white/10
+            grid
+            grid-rows-[minmax(0,1fr)_auto]
+          "
+        >
 
-                <div className="mt-8 md:mt-0 select-none">
-                  <p className="text-[10px] text-zinc-500 leading-relaxed font-[family-name:var(--font-inter)]">
-                    &copy; 2026 Obiettivo Club. Selected for the digital exhibition at NIT Silchar. All rights reserved to their respective artists.
-                  </p>
-                </div>
-              </div>
+          {/* Scrollable Content */}
+          <div className="min-h-0 overflow-y-auto p-6 md:p-8">
 
+            {/* Category */}
+            <div className="flex items-center gap-2">
+              <span className="text-[9px] font-bold uppercase tracking-widest text-blue-400 font-[family-name:var(--font-syncopate)] px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/20">
+                {selectedPhoto.category}
+              </span>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+            {/* Title */}
+            <h2 className="mt-5 text-2xl md:text-3xl font-bold text-white font-[family-name:var(--font-inter)] tracking-tight">
+              {selectedPhoto.title}
+            </h2>
+
+            {/* Description */}
+            <p className="mt-4 text-sm md:text-base text-zinc-400 leading-relaxed font-[family-name:var(--font-inter)]">
+              {selectedPhoto.description}
+            </p>
+
+            {/* Explore More */}
+            {selectedPhoto.exploreUrl && (
+              <button
+                onClick={() =>
+                  window.open(selectedPhoto.exploreUrl, "_blank")
+                }
+                className="
+                  mt-6
+                  inline-flex
+                  items-center
+                  gap-2
+                  w-fit
+                  px-4
+                  py-2.5
+                  rounded-lg
+                  bg-blue-500/10
+                  border
+                  border-blue-500/20
+                  text-blue-400
+                  text-[10px]
+                  font-semibold
+                  uppercase
+                  tracking-wider
+                  hover:bg-blue-500
+                  hover:text-white
+                  transition-all
+                  duration-300
+                  cursor-pointer
+                "
+              >
+                Explore More
+                <span className="text-sm">→</span>
+              </button>
+            )}
+
+          </div>
+
+          {/* Fixed Copyright Footer */}
+          <div
+            className="
+              shrink-0
+              w-full
+              px-6
+              md:px-8
+              pt-4
+              pb-6
+              md:pb-8
+              border-t
+              border-white/5
+              bg-[#0b0b0c]
+            "
+          >
+            <p className="text-[10px] text-zinc-500 leading-relaxed font-[family-name:var(--font-inter)]">
+              &copy; 2026 Obiettivo Club. Selected for the digital exhibition
+              at NIT Silchar. All rights reserved to their respective artists.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
 
     </div>
   );

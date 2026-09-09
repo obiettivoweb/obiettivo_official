@@ -98,7 +98,7 @@ const Masonry: React.FC<MasonryProps> = ({
   onItemClick
 }) => {
   const columns = useMedia(
-    ['(min-width:1500px)', '(min-width:1000px)', '(min-width:600px)', '(min-width:400px)'],
+    ['(min-width:1500px)', '(min-width:1000px)', '(min-width:640px)', '(min-width:340px)'],
     [5, 4, 3, 2],
     1
   );
@@ -286,16 +286,7 @@ const Masonry: React.FC<MasonryProps> = ({
                 </h3>
               )}
 
-              <div className="w-full flex items-center justify-between mt-2 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500">
-                {item.photographer && (
-                  <p className="text-[10px] font-light text-zinc-400">
-                    by <span className="text-zinc-300 font-medium">{item.photographer}</span>
-                  </p>
-                )}
-                <span className="text-[8px] uppercase tracking-wider text-blue-400">
-                  details &rarr;
-                </span>
-              </div>
+              
             </div>
 
             {colorShiftOnHover && (

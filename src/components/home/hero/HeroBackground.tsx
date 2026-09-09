@@ -4,10 +4,10 @@ interface HeroBackgroundProps {
 }
 
 const bgImages = [
-  "/images/home-bg1.png",
-  "/images/home-bg2.jpg",
-  "/images/home-bg3.jpg",
-  "/images/home-bg4.jpg"
+  "/images/home/home-bg1.webp",
+  "/images/home/home-bg2.webp",
+  "/images/home/home-bg3.webp",
+  "/images/home/home-bg4.webp"
 ];
 
 export default function HeroBackground({ activeIndex }: HeroBackgroundProps) {

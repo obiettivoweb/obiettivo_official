@@ -82,19 +82,51 @@ export default function Footer() {
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
 
-  if (pathname === "/team") return null;
+  if (pathname === "/projects") return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !description) return;
-    setStatus("sending");
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!email || !description) return;
+
+  setStatus("sending");
+
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email.trim(),
+          message: description.trim(),
+        }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || "Failed to send message");
+    }
+
+    setStatus("sent");
+    setEmail("");
+    setDescription("");
+
+    // Return button to normal after 3 seconds
     setTimeout(() => {
-      setStatus("sent");
-      setEmail("");
-      setDescription("");
-      setTimeout(() => setStatus("idle"), 3000);
-    }, 1500);
-  };
+      setStatus("idle");
+    }, 3000);
+
+  } catch (error) {
+    console.error("Quick enquiry error:", error);
+    setStatus("idle");
+    alert("Failed to send your enquiry. Please try again.");
+  }
+};
 
   const handleOpenContactModal = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -107,7 +139,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="mt-auto w-full border-t border-white/5 bg-transparent text-zinc-400 font-[family-name:var(--font-sora)] select-none">
+    <footer className="mt-auto w-full border-t border-white/5 bg-transparent text-zinc-400 font-[family-name:var(--font-sora)] select-none relative z-20">
       <div className="mx-auto max-w-7xl px-6 pt-10 pb-10 md:pt-14 md:pb-12">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12">
           {/* Brand Column */}

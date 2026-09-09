@@ -5,28 +5,28 @@ import { BorderBeam } from "@/components/ui/border-beam";
 
 const photographyCategories = [
   {
-    src: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80",
+    src: "images/whatWeCapture/monochrome.webp",
     title: "Monochrome"
   },
   {
-    src: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80",
-    title: "Street Photo"
+    src: "images/whatWeCapture/wildlife.webp",
+    title: "Wild Life"
   },
   {
-    src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+    src: "images/whatWeCapture/portraits.webp",
     title: "Portraits"
   },
   {
-    src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80",
+    src: "images/whatWeCapture/landscape.webp",
     title: "Landscapes"
   },
   {
-    src: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80",
-    title: "Event Coverage"
+    src: "images/whatWeCapture/creative.webp",
+    title: "Creative"
   },
   {
-    src: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80",
-    title: "Macro Details"
+    src: "images/whatWeCapture/architectural.webp",
+    title: "Architectural"
   }
 ];
 

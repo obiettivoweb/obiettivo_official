@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useCallback, useEffect, useRef } from "react";
-import type { CSSProperties, ReactNode } from "react";
+import { useCallback, useEffect, useRef } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 
 const clamp = (v: number, a: number, b: number): number => (v < a ? a : v > b ? b : v);
 
@@ -11,21 +11,21 @@ const smoothstep = (edge0: number, edge1: number, x: number): number => {
 };
 
 type ConfigKey =
-  | "startWidth"
-  | "startHeight"
-  | "startRadius"
-  | "endRadius"
-  | "mediaZoom"
-  | "scrollDistance"
-  | "holdDistance"
-  | "smoothing"
-  | "overlayScrim"
-  | "useWindowScroll"
-  | "enabled";
+  | 'startWidth'
+  | 'startHeight'
+  | 'startRadius'
+  | 'endRadius'
+  | 'mediaZoom'
+  | 'scrollDistance'
+  | 'holdDistance'
+  | 'smoothing'
+  | 'overlayScrim'
+  | 'useWindowScroll'
+  | 'enabled';
 
 export interface ScrollExpandProps {
   src?: string;
-  mediaType?: "image" | "video";
+  mediaType?: 'image' | 'video';
   poster?: string;
   alt?: string;
   title?: string;
@@ -48,12 +48,12 @@ export interface ScrollExpandProps {
 }
 
 const ScrollExpand: React.FC<ScrollExpandProps> = ({
-  src = "",
-  mediaType = "image",
-  poster = "",
-  alt = "",
-  title = "",
-  scrollHint = "",
+  src = '',
+  mediaType = 'image',
+  poster = '',
+  alt = '',
+  title = '',
+  scrollHint = '',
   startWidth = 42,
   startHeight = 58,
   startRadius = 24,
@@ -66,7 +66,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
   useWindowScroll = false,
   enabled = true,
   children,
-  className = "",
+  className = '',
   style,
   ...rest
 }: ScrollExpandProps) => {
@@ -74,7 +74,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
   const trackRef = useRef<HTMLDivElement | null>(null);
   const stageRef = useRef<HTMLDivElement | null>(null);
   const frameRef = useRef<HTMLDivElement | null>(null);
-  const mediaRef = useRef<any>(null);
+  const mediaRef = useRef<HTMLImageElement & HTMLVideoElement>(null);
   const titleRef = useRef<HTMLDivElement | null>(null);
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const scrimRef = useRef<HTMLDivElement | null>(null);
@@ -94,7 +94,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
     smoothing,
     overlayScrim,
     useWindowScroll,
-    enabled,
+    enabled
   };
 
   const applyProgress = useCallback((p: number) => {
@@ -141,7 +141,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
     const stage = stageRef.current;
     if (!root || !track || !stage) return;
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     let raf = 0;
     let current = 0;
@@ -157,7 +157,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
       track.style.height = `${stageH * (1 + Math.max(0, c.scrollDistance) + Math.max(0, c.holdDistance))}px`;
 
       const w = root.clientWidth || stageH;
-      stage.style.setProperty("--se-title-size", `${clamp(w * 0.075, 20, 84)}px`);
+      stage.style.setProperty('--se-title-size', `${clamp(w * 0.075, 20, 84)}px`);
     };
 
     const readProgress = () => {
@@ -212,21 +212,21 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
     applyProgress(current);
 
     const scroller = useWindowScroll ? window : root;
-    scroller.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onResize);
+    scroller.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
     const ro = new ResizeObserver(onResize);
     ro.observe(root);
 
     return () => {
       if (raf) cancelAnimationFrame(raf);
-      scroller.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onResize);
+      scroller.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
       ro.disconnect();
     };
   }, [applyProgress, useWindowScroll]);
 
   const media =
-    mediaType === "video" ? (
+    mediaType === 'video' ? (
       <video
         ref={mediaRef}
         className="absolute inset-0 w-full h-full object-cover origin-center select-none [will-change:transform]"
@@ -250,7 +250,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
   return (
     <div
       ref={rootRef}
-      className={`relative w-full h-full ${useWindowScroll ? "" : "overflow-y-auto overflow-x-hidden overscroll-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"} ${className}`.trim()}
+      className={`relative w-full h-full ${useWindowScroll ? '' : 'overflow-y-auto overflow-x-hidden overscroll-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden'} ${className}`.trim()}
       style={style}
       {...rest}
     >
@@ -260,11 +260,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
             ref={frameRef}
             className="absolute inset-0 [clip-path:inset(21%_29%_21%_29%_round_24px)] [will-change:clip-path]"
           >
-            <div className="absolute inset-0 w-full h-full overflow-x-auto overflow-y-hidden touch-pan-x scrollbar-none [&::-webkit-scrollbar]:hidden">
-              <div className="relative min-w-[160vw] md:min-w-full h-full">
-                {media}
-              </div>
-            </div>
+            {media}
             <div
               ref={scrimRef}
               className="absolute inset-0 opacity-0 pointer-events-none bg-[linear-gradient(to_top,rgba(0,0,0,0.75),rgba(0,0,0,0.1)_45%,rgba(0,0,0,0.35))]"
@@ -272,7 +268,7 @@ const ScrollExpand: React.FC<ScrollExpandProps> = ({
             {children ? (
               <div
                 ref={overlayRef}
-                className="absolute inset-0 flex flex-col items-center justify-center text-center p-[6%] opacity-0 pointer-events-none [will-change:opacity,transform]"
+                className="absolute inset-0 flex flex-col items-center justify-center text-center p-[6%] opacity-0 [will-change:opacity,transform]"
               >
                 {children}
               </div>

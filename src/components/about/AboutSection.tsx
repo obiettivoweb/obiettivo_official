@@ -11,7 +11,7 @@ export default function AboutSection() {
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         {/* Campfire at night Unsplash image */}
         <img
-          src="/images/about-bg.jpg"
+          src="/images/home/about-bg.webp"
           alt="About Background"
           className="absolute inset-0 w-full h-full object-cover object-right md:object-center opacity-75 md:opacity-85"
           loading="lazy"

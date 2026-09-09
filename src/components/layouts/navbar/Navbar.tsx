@@ -39,7 +39,8 @@ export default function Navbar() {
             justify-between
             rounded-full
             border
-            px-6
+            px-3
+            sm:px-6
             transition-all
             duration-500
             ${scrolled
@@ -55,7 +56,7 @@ export default function Navbar() {
           <NavLinks />
 
           {/* Right */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
             <ContactButton />
             <MobileMenu />
           </div>

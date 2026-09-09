@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function TeamPage() {
   return (
-    <main className="pt-20 md:pt-24">
+    <main className="pt-20 md:pt-24 w-full max-w-full overflow-x-hidden">
       <TeamClient />
     </main>
   );

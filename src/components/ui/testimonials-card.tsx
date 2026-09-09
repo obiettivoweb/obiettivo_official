@@ -96,7 +96,7 @@ export function TestimonialsCard({
                 )}
 
                 {/* Image Card Stack */}
-                <div className="row-start-2 col-start-1 md:row-start-1 row-span-3 relative w-full aspect-[16/10]">
+                <div className="row-start-2 col-start-1 md:row-start-1 row-span-3 relative w-full aspect-[16/10] overflow-hidden">
                     <AnimatePresence custom={direction}>
                         {items.map((item, index) => {
                             const isActive = index === activeIndex;
@@ -110,10 +110,10 @@ export function TestimonialsCard({
                                     key={item.id}
                                     className="absolute inset-0 w-full h-full overflow-hidden border-[6px] bg-zinc-900 border-zinc-800 shadow-2xl rounded-xl"
                                     initial={{
-                                        x: offset * 15,
+                                        x: offset * 12,
                                         y: Math.abs(offset) * 6,
-                                        z: -150 * Math.abs(offset),
-                                        scale: 0.85 - Math.abs(offset) * 0.04,
+                                        z: -100 * Math.abs(offset),
+                                        scale: 0.9 - Math.abs(offset) * 0.04,
                                         rotateZ: rotations[index % 4],
                                         opacity: isActive ? 1 : 0.5,
                                         zIndex: 10 - Math.abs(offset),
@@ -121,33 +121,33 @@ export function TestimonialsCard({
                                     animate={
                                         isActive
                                             ? {
-                                                x: [offset * 15, direction === 1 ? -200 : 200, 0],
+                                                x: [offset * 12, direction === 1 ? -30 : 30, 0],
                                                 y: [Math.abs(offset) * 6, 0, 0],
-                                                z: [-200, 150, 0],
-                                                scale: [0.85, 1.05, 1],
-                                                rotateZ: [rotations[index % 4], -5, 0],
+                                                z: [-100, 50, 0],
+                                                scale: [0.9, 1.02, 1],
+                                                rotateZ: [rotations[index % 4], -2, 0],
                                                 opacity: 1,
                                                 zIndex: 100,
                                             }
                                             : {
-                                                x: offset * 15,
+                                                x: offset * 12,
                                                 y: Math.abs(offset) * 6,
-                                                z: -150 * Math.abs(offset),
+                                                z: -100 * Math.abs(offset),
                                                 rotateZ: rotations[index % 4],
-                                                scale: 0.85 - Math.abs(offset) * 0.04,
+                                                scale: 0.9 - Math.abs(offset) * 0.04,
                                                 opacity: 0.55,
                                                 zIndex: 10 - Math.abs(offset),
                                             }
                                     }
                                     exit={{
-                                        x: direction === 1 ? -250 : 250,
-                                        z: -260,
-                                        scale: 0.75,
-                                        rotateZ: direction === 1 ? -10 : 10,
+                                        x: direction === 1 ? -60 : 60,
+                                        z: -150,
+                                        scale: 0.85,
+                                        rotateZ: direction === 1 ? -5 : 5,
                                         opacity: 0,
                                     }}
                                     transition={{
-                                        duration: 0.75,
+                                        duration: 0.5,
                                         ease: [0.22, 1, 0.36, 1],
                                     }}
                                 >

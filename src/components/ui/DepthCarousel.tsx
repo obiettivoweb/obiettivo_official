@@ -33,6 +33,7 @@ export interface DepthCarouselProps {
   autoplay?: boolean;
   autoplayDelay?: number;
   loop?: boolean;
+  enableWheel?: boolean;
   showControls?: boolean;
   showIndicators?: boolean;
   onChange?: (index: number, item: { image: string; alt?: string }) => void;
@@ -96,6 +97,7 @@ const DepthCarousel = ({
   autoplay = false,
   autoplayDelay = 3200,
   loop = true,
+  enableWheel = false,
   showControls = true,
   showIndicators = true,
   onChange,
@@ -253,7 +255,7 @@ const DepthCarousel = ({
 
   useEffect(() => {
     const el = rootRef.current;
-    if (!el) return;
+    if (!el || !enableWheel) return;
     const onWheel = (e: WheelEvent) => {
       const cfg = cfgRef.current;
       if (cfg.count < 2) return;
@@ -264,6 +266,15 @@ const DepthCarousel = ({
       const step = clamp(delta / (cfg.cardWidth * 0.9), -0.6, 0.6);
       posRef.current += step;
       layout(posRef.current);
+
+      const n = cfg.count;
+      const rawIdx = Math.round(posRef.current);
+      const currentIdx = cfg.loop ? ((rawIdx % n) + n) % n : clamp(rawIdx, 0, n - 1);
+      if (currentIdx !== focusRef.current) {
+        focusRef.current = currentIdx;
+        notify(currentIdx);
+      }
+
       if (wheelTimerRef.current) clearTimeout(wheelTimerRef.current);
       wheelTimerRef.current = setTimeout(() => setFocus(Math.round(posRef.current), true), 130);
     };
@@ -272,7 +283,7 @@ const DepthCarousel = ({
       el.removeEventListener('wheel', onWheel);
       if (wheelTimerRef.current) clearTimeout(wheelTimerRef.current);
     };
-  }, [layout, setFocus]);
+  }, [enableWheel, layout, setFocus, notify]);
 
   const onPointerDown = useCallback((e: ReactPointerEvent<HTMLDivElement>) => {
     const cfg = cfgRef.current;
@@ -308,8 +319,18 @@ const DepthCarousel = ({
       drag.lastT = now;
       posRef.current = drag.startPos - dx / stepPx;
       layout(posRef.current);
+
+      const n = cfg.count;
+      if (n > 0) {
+        const rawIdx = Math.round(posRef.current);
+        const currentIdx = cfg.loop ? ((rawIdx % n) + n) % n : clamp(rawIdx, 0, n - 1);
+        if (currentIdx !== focusRef.current) {
+          focusRef.current = currentIdx;
+          notify(currentIdx);
+        }
+      }
     },
-    [layout]
+    [layout, notify]
   );
 
   const onPointerEnd = useCallback(() => {
